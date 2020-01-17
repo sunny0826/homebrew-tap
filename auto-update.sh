@@ -58,11 +58,9 @@ do
     sed -i "s#^\s*url.*#  url \"$DOWNLOAD_URL\"#g" homebrew-tap/$FILE_NAME.rb
     sed -i "s#^\s*version.*#  version \"$V_VERSION\"#g" homebrew-tap/$FILE_NAME.rb
     sed -i "s#^\s*sha256.*#  sha256 \"$V_HASH256\"#g" homebrew-tap/$FILE_NAME.rb
-    # sed -i "s#^\s*desc.*#  desc \"$UPDATE_TIME\"#g" homebrew-tap/$FILE_NAME.rb
 done
 
 cd homebrew-tap
-echo ”UpdateTime：$UPDATE_TIME” > update_time  
 git add .
 git commit -am "travis automated update" || exit 0
 git push  --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master
