@@ -1,9 +1,9 @@
 class Kubecm < Formula
   desc "Merge multiple kubeconfig"
   homepage "https://github.com/sunny0826/kubecm"
-  url "https://github.com/sunny0826/kubecm/releases/download/v0.7.3-rc1/kubecm_0.7.3-rc1_Darwin_x86_64.tar.gz"
-  version "v0.7.3-rc1"
-  sha256 "e34fce7a04a3e7668575266b1b3efec0c54ad5bf65bb8cf5935e24ac72ca3ed9"
+  url "https://github.com/sunny0826/kubecm/releases/download/v0.7.4/kubecm_0.7.4_Darwin_x86_64.tar.gz"
+  version "v0.7.4"
+  sha256 "eac6840fc74d361f22dc933dc82f7a97948947a687c0d8163b1be50771c0ecf3"
 
   def install
     bin.install "kubecm"
