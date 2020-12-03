@@ -2,27 +2,27 @@
 class Kubecm < Formula
   desc "Merge multiple kubeconfig"
   homepage "https://github.com/sunny0826/kubecm"
-  version "0.10.3"
+  version "0.10.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.10.3/kubecm_0.10.3_Darwin_x86_64.tar.gz"
-    sha256 "9fb8288e3e5c89bacea3b730f084ba66633a7fb781a6aa762388351b78ad26b7"
+    url "https://github.com/sunny0826/kubecm/releases/download/0.10.4/kubecm_0.10.4_Darwin_x86_64.tar.gz"
+    sha256 "af3d0cc7fd4c5ab1de0871ad248841cf0ac6d58ffbe3c25eebab44b381e31c7d"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.10.3/kubecm_0.10.3_Linux_x86_64.tar.gz"
-    sha256 "1ff608898e9d29a776cebf62f1e1b4d72c1e01f7e504dfce3c777ed606dfaec6"
+    url "https://github.com/sunny0826/kubecm/releases/download/0.10.4/kubecm_0.10.4_Linux_x86_64.tar.gz"
+    sha256 "7dee7ec302e7a4498fe9771bb9a4c4209178d77892e81bacfe0be69fa02fda39"
   end
-  
+
   depends_on "git"
 
   def install
     bin.install "kubecm"
-    
+
     # Install bash completion
     output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "bash")
     (bash_completion/"kubecm").write output
-    
+
     # Install zsh completion
     output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "zsh")
     (zsh_completion/"_kubecm").write output
