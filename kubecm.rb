@@ -6,12 +6,12 @@ class Kubecm < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/sunny0826/kubecm/releases/download/0.10.4/kubecm_0.10.4_Darwin_x86_64.tar.gz"
-    sha256 "5410cf53763fc1afaed5d8f12bde12b8b64444ffc1e4a9d308fa10e45d41f636"
+    url "https://github.com/sunny0826/kubecm/releases/download/v0.10.4/kubecm_0.10.4_Darwin_x86_64.tar.gz"
+    sha256 "f745c224a936993e6623402edcca1ad33052f35ba5e79250388ed5859c980aff"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sunny0826/kubecm/releases/download/0.10.4/kubecm_0.10.4_Linux_x86_64.tar.gz"
-    sha256 "f931c40773cf9eb31d456a077590b4b7f90d7f64f06515f51d9cab81ba296827"
+    url "https://github.com/sunny0826/kubecm/releases/download/v0.10.4/kubecm_0.10.4_Linux_x86_64.tar.gz"
+    sha256 "be76da10dfc1ec86f98c475a7ed4756755513108fb023005b1169bcbade68425"
   end
 
   depends_on "git"
