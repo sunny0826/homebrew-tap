@@ -7,11 +7,11 @@ class Kubecm < Formula
 
   if OS.mac?
     url "https://github.com/sunny0826/kubecm/releases/download/0.10.4/kubecm_0.10.4_Darwin_x86_64.tar.gz"
-    sha256 "af3d0cc7fd4c5ab1de0871ad248841cf0ac6d58ffbe3c25eebab44b381e31c7d"
+    sha256 "28a37bd7e562e5d20fe6e03d07fad714f73e61cc74084363b54faa5b9068fe39"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/sunny0826/kubecm/releases/download/0.10.4/kubecm_0.10.4_Linux_x86_64.tar.gz"
-    sha256 "7dee7ec302e7a4498fe9771bb9a4c4209178d77892e81bacfe0be69fa02fda39"
+    sha256 "564baa8dbcc2855d93fd2496bf500c3796244a922b564dd37f000f559687db3c"
   end
 
   depends_on "git"
