@@ -2,16 +2,16 @@
 class Kubecm < Formula
   desc "Merge multiple kubeconfig"
   homepage "https://github.com/sunny0826/kubecm"
-  version "0.12.0"
+  version "0.13.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.12.0/kubecm_0.12.0_Darwin_x86_64.tar.gz"
-    sha256 "372e340660cabf0a51059ae0110f1ae9f421da2b0420873dcaf2e47a502fc41d"
+    url "https://github.com/sunny0826/kubecm/releases/download/v0.13.0/kubecm_0.13.0_Darwin_x86_64.tar.gz"
+    sha256 "b4b25e4a119dbd47ede2dde7cdcd7bed4de8ebdcbcd9cb87791b1ac273369834"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.12.0/kubecm_0.12.0_Linux_x86_64.tar.gz"
-    sha256 "6c0caf5f4140325ed9ffeaee5e6eb0c7ff36dd4b699f7040a09424ebc5cc33f3"
+    url "https://github.com/sunny0826/kubecm/releases/download/v0.13.0/kubecm_0.13.0_Linux_x86_64.tar.gz"
+    sha256 "8e954058856b510662b787a062300d14c19aff40d28791ca6b520e513dd5fbb7"
   end
 
   depends_on "git"
