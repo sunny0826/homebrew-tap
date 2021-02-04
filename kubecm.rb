@@ -5,20 +5,20 @@
 class Kubecm < Formula
   desc "Merge multiple kubeconfig"
   homepage "https://github.com/sunny0826/kubecm"
-  version "0.14.0"
+  version "0.15.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.14.0/kubecm_0.14.0_Darwin_x86_64.tar.gz"
-    sha256 "7c40c921f0b575d4f3a9ee6ae3bbde729fe5dc17f8bd9a9a2e004de6f3aa3ba0"
+    url "https://github.com/sunny0826/kubecm/releases/download/v0.15.0/kubecm_0.15.0_Darwin_x86_64.tar.gz"
+    sha256 "0b2963c2f31488af1a371fd0c5f343413160d268272e79063875c66c54d89620"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.14.0/kubecm_0.14.0_Linux_x86_64.tar.gz"
-    sha256 "82f66be265e53654b92333cbea4c06b8cde5d963222173fe5b652e2f440bdd8e"
+    url "https://github.com/sunny0826/kubecm/releases/download/v0.15.0/kubecm_0.15.0_Linux_x86_64.tar.gz"
+    sha256 "06fe41759dd98c4f5f06a587c593eeb510271a0dd723f596df107a375158e3e1"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.14.0/kubecm_0.14.0_Linux_arm64.tar.gz"
-    sha256 "09e02a628b232c3ab66a1ff6286b683f1821c05731010ca75f1ebe52db08ddf8"
+    url "https://github.com/sunny0826/kubecm/releases/download/v0.15.0/kubecm_0.15.0_Linux_arm64.tar.gz"
+    sha256 "6e176691035adfccfe1c4fd0bdc42f44fb7c58858351933aaa3b589ce5a24c4a"
   end
 
   depends_on "git"
