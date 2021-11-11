@@ -5,39 +5,79 @@
 class Kubecm < Formula
   desc "Merge multiple kubeconfig"
   homepage "https://github.com/sunny0826/kubecm"
-  version "0.15.3"
-  bottle :unneeded
+  version "0.16.0"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.15.3/kubecm_0.15.3_Darwin_x86_64.tar.gz"
-    sha256 "fc50ee49e230747c3fd3a2fa3c8af5c89fa7d9f17d76f01c36bfbe2679f46203"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Darwin_arm64.tar.gz"
+      sha256 "4c4b195e246e06b4e8a184e025e306eeca5b15861cfd43a1990b2922c5a4f603"
+
+      def install
+        bin.install "kubecm"
+
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "bash")
+        (bash_completion/"kubecm").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "zsh")
+        (zsh_completion/"_kubecm").write output
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Darwin_x86_64.tar.gz"
+      sha256 "87aeb33f6701423750c7daa670ce8fc1ea1e7990b21676f95c8b1a920d6f32cf"
+
+      def install
+        bin.install "kubecm"
+
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "bash")
+        (bash_completion/"kubecm").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "zsh")
+        (zsh_completion/"_kubecm").write output
+      end
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.15.3/kubecm_0.15.3_Darwin_arm64.tar.gz"
-    sha256 "37af3dbacb68dd4b163f93790c9ee4376cb5f86e74f88e30b883156929b5fc52"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.15.3/kubecm_0.15.3_Linux_x86_64.tar.gz"
-    sha256 "73084d2383a5107a478b05d3ee1b9f74a3437b6117b1e720e80a4cf2e1910fe5"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/sunny0826/kubecm/releases/download/v0.15.3/kubecm_0.15.3_Linux_arm64.tar.gz"
-    sha256 "447fd85e5e3e1f2f314a1d0f5a5f0e99ddd053b86d03dae6de56c799f21aa0e7"
+
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Linux_arm64.tar.gz"
+      sha256 "e245dbe462eacd07bde4e6e56363e839aa8a35987963e3e38172b78e83051543"
+
+      def install
+        bin.install "kubecm"
+
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "bash")
+        (bash_completion/"kubecm").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "zsh")
+        (zsh_completion/"_kubecm").write output
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Linux_x86_64.tar.gz"
+      sha256 "54206d3d795e73058e5e3389e994f6795b865c21e41252e3ce2d3a51f87bd037"
+
+      def install
+        bin.install "kubecm"
+
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "bash")
+        (bash_completion/"kubecm").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "zsh")
+        (zsh_completion/"_kubecm").write output
+      end
+    end
   end
 
   depends_on "git"
-
-  def install
-    bin.install "kubecm"
-
-    # Install bash completion
-    output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "bash")
-    (bash_completion/"kubecm").write output
-
-    # Install zsh completion
-    output = Utils.safe_popen_read("#{bin}/kubecm", "completion", "zsh")
-    (zsh_completion/"_kubecm").write output
-  end
 
   test do
     system "#{bin}/kubecm version"
