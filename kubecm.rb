@@ -10,7 +10,7 @@ class Kubecm < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Darwin_x86_64.tar.gz"
-      sha256 "3be3b2594fb78ec753a6c514beb2e050757044ee11362c275901859fee6f03b7"
+      sha256 "b9b805272e74fd28426c6d2e20f9fb2c0b25a51955aebc9a8fb3659d4f7bdbca"
 
       def install
         bin.install "kubecm"
@@ -26,7 +26,7 @@ class Kubecm < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Darwin_arm64.tar.gz"
-      sha256 "489e835dc29c1c72971bf623f5356c7c776f83c7292a0a983d5e6f4e1d8b96dd"
+      sha256 "091cf128692103ead39784e66eb8530f4e3c5ce0c55469d45ca131026b21faea"
 
       def install
         bin.install "kubecm"
@@ -45,7 +45,7 @@ class Kubecm < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Linux_x86_64.tar.gz"
-      sha256 "bb6c6910e427b527c36f9b930b94bd620fe55c5d838ae4cf1193fa5a642cc86a"
+      sha256 "e3530fa5aa82b7ff92c121965c91c85711bd96385e58b99c56bdc41760cc16f1"
 
       def install
         bin.install "kubecm"
@@ -61,7 +61,7 @@ class Kubecm < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Linux_arm64.tar.gz"
-      sha256 "69895b8fdf85a99ab124211f1289c1722466618a23ef18019356c7c484a056ca"
+      sha256 "8df3c5b5c60a6056bf01e298f44e4c1e9c74f80e1aa390b768e2cbb01d8cb84a"
 
       def install
         bin.install "kubecm"
