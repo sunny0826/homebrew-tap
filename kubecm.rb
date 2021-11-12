@@ -5,12 +5,12 @@
 class Kubecm < Formula
   desc "Merge multiple kubeconfig"
   homepage "https://github.com/sunny0826/kubecm"
-  version "0.16.0"
+  version "0.16.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Darwin_x86_64.tar.gz"
-      sha256 "b9b805272e74fd28426c6d2e20f9fb2c0b25a51955aebc9a8fb3659d4f7bdbca"
+    if Hardware::CPU.arm?
+      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.1/kubecm_0.16.1_Darwin_arm64.tar.gz"
+      sha256 "1e9b0d39493c5e5deb407149eda75242fdb68639f83f2d39f78fe82c17366ca4"
 
       def install
         bin.install "kubecm"
@@ -24,9 +24,9 @@ class Kubecm < Formula
         (zsh_completion/"_kubecm").write output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Darwin_arm64.tar.gz"
-      sha256 "091cf128692103ead39784e66eb8530f4e3c5ce0c55469d45ca131026b21faea"
+    if Hardware::CPU.intel?
+      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.1/kubecm_0.16.1_Darwin_x86_64.tar.gz"
+      sha256 "7e87394a63ec433c305bde33e74797bdbd991c61ffab8bcc06e2448889ad6ba8"
 
       def install
         bin.install "kubecm"
@@ -44,8 +44,8 @@ class Kubecm < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Linux_x86_64.tar.gz"
-      sha256 "e3530fa5aa82b7ff92c121965c91c85711bd96385e58b99c56bdc41760cc16f1"
+      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.1/kubecm_0.16.1_Linux_x86_64.tar.gz"
+      sha256 "ca8ed00567b173e0a0e4ae07d8da2318e6027178fbbd96ac6528cd8074fa7586"
 
       def install
         bin.install "kubecm"
@@ -60,8 +60,8 @@ class Kubecm < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.0/kubecm_0.16.0_Linux_arm64.tar.gz"
-      sha256 "8df3c5b5c60a6056bf01e298f44e4c1e9c74f80e1aa390b768e2cbb01d8cb84a"
+      url "https://github.com/sunny0826/kubecm/releases/download/v0.16.1/kubecm_0.16.1_Linux_arm64.tar.gz"
+      sha256 "e41264a68c96980fd7f937ade45638fad7243f3b5de4442078723568c06f49e3"
 
       def install
         bin.install "kubecm"
